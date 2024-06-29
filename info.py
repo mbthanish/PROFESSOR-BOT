@@ -38,6 +38,13 @@ FILE_DB_URL = environ.get("FILE_DB_URL", DATABASE_URL)
 FILE_DB_NAME = environ.get("FILE_DB_NAME", DATABASE_NAME)
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#FSUB 
+auth_channel = environ.get('AUTH_CHANNEL','-1002219202132')
+AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
+REQ_CHANNEL=environ.get("REQ_CHANNEL", "-1002219202132")
+REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL is not None else False
+
+JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URL)
 # Filters Configuration 
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
 START_MESSAGE = environ.get('START_MESSAGE', script.START_TXT)
